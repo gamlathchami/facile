@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="index.css">
+        <script type="module" src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="block ratings">
+                <div id="title">Ratings Table</div>
+                <form action="javascript:void(0);" id="ratings__jsform">
+                    <div class="ratings__judges">
+                        <label for="judges">Judges:</label>
+                        <input type="number" name="judges" id="judges__input" min="1" max="50" required>
+                    </div>
+                    <div class="ratings__samples">
+                        <label for="samples">Samples:</label>
+                        <input type="number" name="samples" id="samples__input" min="1" max="10" required>
+                    </div>
+                    <div class="btn-wrapper btn-wrapper--right">
+                        <button type="submit" id="ratings__btn__gen">Generate table</button>
+                    </div>
+                    <div class="btn-wrapper">
+                        <button id="ratings__btn__rem">Remove table</button>
+                    </div>
+                </form>
+                <div id="ratings__container"></div>
+            </div>
+            <div class="block calculate">
+                <label for="percentage">Significance level:</label>
+                <select name="percentage" id="cal__perc">
+                    <option value="0.01">1%</option>
+                    <option value="0.05">5%</option>
+                </select>
+                <button id="cal__btn">Calculate</button>
+            </div>
+            <div class="block anova">
+                <div id="title">ANOVA Table</div>
+                <table id="anova__table">
+                    <tr>
+                        <th>Source of variation</th>
+                        <th>df</th>
+                        <th>ss</th>
+                        <th>ms</th>
+                        <th>F</th>
+                    </tr>
+                    <tr>
+                        <td>Samples</td>
+                        <td id="df-s"></td>
+                        <td id="ss-s"></td>
+                        <td id="ms-s"></td>
+                        <td id="F-s"></td>
+                    </tr>
+                    <tr>
+                        <td>Judges</td>
+                        <td id="df-j"></td>
+                        <td id="ss-j"></td>
+                        <td id="ms-j"></td>
+                        <td id="F-j"></td>
+                    </tr>
+                    <tr>
+                        <td>Error</td>
+                        <td id="df-e"></td>
+                        <td id="ss-e"></td>
+                        <td id="ms-e"></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="df-t"></td>
+                        <td id="ss-t"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="block fvalues">
+                <div id="title">F-Values</div>
+                <table id="fvalues__table">
+                    <tr>
+                        <td>Calculated F-value</td>
+                        <td id="F-s"></td>
+                    </tr>
+                    <tr>
+                        <td id="fvalue-txt"></td>
+                        <td id="fvalue"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="block no-tukey">
+                <p>
+                    Since 
+                    <span id="cal-fvalue">Calculated F</span> 
+                    <span style="font-weight: 1000;color: red;"><</span> 
+                    <span id="cri-fvalue">Critical F</span>, <br>
+                    There isn't a significant difference 
+                    among samples<br>
+                    
+                </p>
+            </div>
+            <div class="block tukey">
+                <div class>
+                    <p>
+                        Since 
+                        <span id="cal-fvalue">Calculated F</span> 
+                        <span style="font-weight: 1000;color: red;">></span> 
+                        <span id="cri-fvalue">Critical F</span>, <br>
+                        One sample is  significantly deffferent among other  samples<br>
+                        
+                    </p>
+                </div>
+
+
+                <div id="tukeyText">Tukey's Test</div>
+                <span>
+                    LSD Value = <span class="lsd"></span>
+                </span>
+                <div class="comparison"></div>
+            </div>
+            <div class="block suitable-sample">
+                <p>
+                    <span>Sample</span>
+                    is the most suitable/acceptable sample <br> 
+                    according to the consumer's preference.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

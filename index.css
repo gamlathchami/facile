@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* padding: 0; */
+    margin: 0;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    white-space: nowrap;
+    clear: both;
+}
+
+table {
+    font-size: 1.2em;
+    margin: 0 auto 12px;
+}
+
+th, td {
+    padding: 5px 10px;
+    width: 70px;
+}
+
+input {
+    text-align: center;
+    font-size: 1em;
+}
+
+input:invalid {
+    color: red;
+}
+
+select {
+    font-size: 1em;
+}
+
+button {
+    font-size: 1em;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.container {
+    padding: 0 10%;
+    padding-top: 50px;
+
+}
+
+.block {
+    border: 1px solid rgba(128, 128, 128, 0.527);
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.btn-wrapper--right {
+    justify-content: right;
+}
+
+
+#title {
+    position: relative;
+    top: -25px;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.705);
+    /* border-radius: 3px; */
+}
+
+
+.ratings {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10px auto auto;
+    row-gap: 15px;
+    margin-bottom: 20px;
+}
+
+#ratings__jsform {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+#judges__input, #samples__input {
+    margin-left: 5px;
+    width: 65px;
+}
+
+.ratings__judges {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.ratings__samples {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#ratings__btn__gen {
+    width: 135px;
+}
+
+#ratings__btn__rem {
+    width: 150px;
+}
+
+#ratings__table {
+    margin-top: 8px;
+}
+
+#ratings__table td:first-child {
+    text-align: center;
+}
+
+#ratings__container {
+    overflow: auto;
+}
+
+#ratings__container input {
+    width: 100%;
+}
+
+
+.calculate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65px;
+    column-gap: 15px; /* not supported on some browsers */
+}
+
+
+.anova {
+    display: grid;
+    grid-template-rows: 10px auto;
+    row-gap: 15px;
+}
+
+#anova__table td:not(:first-child) {
+    text-align: center;
+}
+
+
+.fvalues {
+    display: grid;
+    grid-template-rows: 10px auto;
+    row-gap: 15px;
+}
+
+
+.tukey, .no-tukey, .suitable-sample {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.comparison {
+    text-align: left;
+}
+
+.no-tukey span, .suitable-sample span {
+    font-weight: bold;
+}
+
+
+#fvalues__table td:last-child {
+    text-align: center;
+}
+
+
+.anova, .fvalues, .tukey, .no-tukey, .suitable-sample {
+    display: none;
+}
+
+.tukeyText{
+    position: relative;
+    top: -8px;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.705);
+
+}
